@@ -10,6 +10,10 @@ if(req.url == "/"){
     res.end("Websocket server");
 }
 
+if(req.url == "/ping"){
+  res.end("ping");
+}
+
 if(req.url === "/getmessages"){
     let msg = await fs.readFile("./messages.txt");
     res.end(msg);
